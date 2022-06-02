@@ -1,0 +1,13 @@
+from karel.stanfordkarel import *
+def main():
+    collect_all_beepers()
+def collect_all_beepers(7):
+    for i in range(7):
+        move_wall()
+        collect()
+def move_wall():
+    if front_is_clear():
+        move()
+def collect():
+    while beepers_present():
+        pick_beeper()

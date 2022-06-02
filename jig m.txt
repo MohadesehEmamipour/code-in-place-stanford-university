@@ -1,0 +1,29 @@
+    for i in range(2):
+        move()
+    invert_beeper()
+    move()
+    turn_left()
+    for i in range(2):
+        move()
+    invert_beeper()
+    turn_around()
+    for i in range(2):
+        move()
+    turn_right()
+    for i in range(3):
+        move()
+    turn_around()
+
+
+def invert_beeper():
+    if beepers_present():
+        pick_beeper()
+    else:
+        put_beeper()
+def turn_around():
+    turn_left()
+    turn_left()
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()

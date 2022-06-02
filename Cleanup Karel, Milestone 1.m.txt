@@ -1,0 +1,6 @@
+from karel.stanfordkarel import *
+def main():
+    check_beeper()
+def check_beeper():
+    if beepers_present():
+        pick_beeper()

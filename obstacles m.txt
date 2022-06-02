@@ -1,0 +1,36 @@
+from karel.stanfordkarel import *
+def main():
+    move_to_wall()
+    turn_left()
+    move()
+    twice_put_twice_around_move()
+    twice_right_move_put()
+    turn_left()
+    move_to_wall()
+
+def move_to_wall():
+    while front_is_clear():
+        move()
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+def right_move():
+    turn_right()
+    move()
+def turn_around():
+    turn_left()
+    turn_left()
+def twice_right_move():
+    for i in range(2):
+        right_move()
+def put_twice_around_move():
+    twice_right_move_put()
+    turn_around()
+    move()
+def twice_put_twice_around_move():
+    for i in range(2):
+        put_twice_around_move()
+def twice_right_move_put():
+    twice_right_move()
+    put_beeper()

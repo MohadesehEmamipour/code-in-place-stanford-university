@@ -1,0 +1,37 @@
+from karel.stanfordkarel import *
+def main():
+    while front_is_clear():
+        turn_left()
+        putting_beeper()
+        moving_to_next_avenue()
+    turn_left()
+    putting_beeper()
+
+def putting_beeper():
+    while front_is_clear():
+        if beepers_present():
+            move()
+        else:
+            put_beeper()
+    if beepers_present():
+        turn_right()
+        moving_down()
+    else:
+        put_beeper()
+        turn_right()
+        moving_down()
+
+def moving_down():
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_left()
+
+def moving_to_next_avenue():
+    for i in range(4):
+        move()
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+

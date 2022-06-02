@@ -1,0 +1,49 @@
+from karel.stanfordkarel import *
+
+"""
+File: TreasureHunt1.py
+------------------------------
+Karel will move forward until a beeper.
+At every beeper, Karel will turn left and move until the next beeper, until Karel is standing on the treasure, which is a pile of 10 beepers.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    pass
+
+    left_move()
+    turn_left()
+    move()
+    turn_right()
+    clear()
+    turn_left()
+    y()
+    turn_left()
+    clear()
+def y():
+    for i in range(3):
+        move()
+        beepers()
+def left_move():
+    for i in range(6):
+
+        clear()
+
+        turn_left()
+def turn_right():
+    for i in range(3):
+        turn_left()
+def clear():
+    while front_is_clear():
+        move()
+        beepers()
+def beepers():
+    while beepers_present():
+        pick_beeper()
+if __name__ == "__main__":
+    run_karel_program('TreasureHunt1.w')

@@ -1,0 +1,25 @@
+from karel.stanfordkarel import *
+
+"""
+File: RampClimbingKarel.py
+--------------------
+When you finish writing this file, RampClimbingKarel should be
+able to draw a line with slope 1/2 in any odd sized world
+"""
+
+def main():
+    move_to_wall()
+    put_beeper()
+
+def move_to_wall():
+    while front_is_clear():
+        put_beeper()
+        turn_left()
+        move()
+        turn_right()
+        for i in range(2):
+            move()
+
+def turn_right():
+    for i in range(3):
+        turn_left()

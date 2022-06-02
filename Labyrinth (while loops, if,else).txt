@@ -1,0 +1,45 @@
+from karel.stanfordkarel import *
+
+"""
+File: LabyrinthKarel.py
+------------------------------
+Karel solves labyrinths!
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    pass
+    move_wall()
+    left_move()
+    turn_right()
+    move_wall()
+    left_move()
+    right_move()
+def left_move():
+    for i in range(2):
+        turn_left()
+        move_wall()
+def right_move():
+    for i in range(5):
+        turn_right()
+        move_wall()
+def turn_right():
+    for i in range(3):
+        turn_left()
+def x():
+    for i in range(2):
+        turn_left()
+        move_wall()
+        turn_left()
+        move_wall()
+def move_wall():
+    while front_is_clear():
+        move()
+
+if __name__ == "__main__":
+    run_karel_program('Labyrinth1')

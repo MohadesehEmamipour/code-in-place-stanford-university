@@ -1,0 +1,18 @@
+from karel.stanfordkarel import *
+def main():
+    turn_left()
+    clear_move()
+    for i in range(2):
+        right_move()
+    turn_left()
+def clear_move():
+    if front_is_clear():
+        while front_is_clear():
+            move()
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+def right_move():
+    turn_right()
+    clear_move()

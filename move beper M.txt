@@ -1,0 +1,21 @@
+from karel.stanfordkarel import *
+def main():
+    move()
+    put()
+    turn_left()
+    move_pick()
+    put()
+    turn_right()
+    move_pick()
+def move_pick():
+    while front_is_clear():
+        move()
+def put():
+    if front_is_clear():
+        pick_beeper()
+    else:
+        put_beeper()
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()

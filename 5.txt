@@ -1,0 +1,10 @@
+    invert_corner()
+    while front_is_clear():
+        move()
+        invert_corner()
+
+def invert_corner():
+    if beepers_present():
+        pick_beeper()
+    else:
+        put_beeper()

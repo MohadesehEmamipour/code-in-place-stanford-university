@@ -1,0 +1,16 @@
+"""
+Asks the user for a number until they enter -1
+Reports the total value of all the numbers at the end
+"""
+
+def main():
+    a=int(input('Type a number: '))
+    totall=0
+    while a != -1:
+        totall +=a
+        a=int(input('Type a number: '))
+    print('totall is:',totall)
+
+
+if __name__ == '__main__':
+    main()

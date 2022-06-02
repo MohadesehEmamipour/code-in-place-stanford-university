@@ -1,0 +1,12 @@
+from karel.stanfordkarel import *
+def main():
+    put_move()
+def put_move():
+    put()
+    move()
+    put()
+    put_beeper()
+    move()
+def put():
+    for i in range(20):
+        put_beeper()

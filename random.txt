@@ -1,0 +1,10 @@
+import random
+weight_head=0.7
+def main():
+    if random.random() < weight_head:
+        print('head')
+    else:
+        print('tails')
+
+if __name__ == "__main__":
+    main()

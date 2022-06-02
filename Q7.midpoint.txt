@@ -1,0 +1,53 @@
+from karel.stanfordkarel import *
+
+"""
+File: Midpoint.py
+------------------------
+Place a beeper on the middle of the first row.
+"""
+
+def main():
+    place_beepers()
+    remove_beepers()
+    to_midpoint()
+
+def turn_back():
+    for i in range(2):
+        turn_left()
+
+def place_beepers():
+    while front_is_clear():
+        if no_beepers_present():
+            put_beeper()
+        move()
+        if no_beepers_present():
+            put_beeper()
+    turn_back()
+
+def remove_beepers():
+    while front_is_clear():
+        move()
+        if no_beepers_present():
+            turn_back()
+            move()
+            if beepers_present():
+                pick_beeper()
+            else:
+                put_beeper()
+                while front_is_clear():
+                    move()
+        if front_is_blocked():
+            if beepers_present():
+                pick_beeper()
+                turn_back()
+                if front_is_clear():
+                    move()
+
+def to_midpoint():
+    if front_is_blocked():
+        turn_back()
+    while no_beepers_present():
+        if front_is_clear():
+            move()
+        else:
+            put_beeper()

@@ -1,0 +1,12 @@
+    beeper()
+    move_wall()
+    beeper()
+def move_wall():
+    while front_is_clear():
+        move()
+
+def beeper():
+    if beepers_present():
+        pick_beeper()
+    else:
+        put_beeper()

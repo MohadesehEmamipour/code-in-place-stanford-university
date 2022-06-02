@@ -1,0 +1,38 @@
+from karel.stanfordkarel import *
+
+"""
+File: Obstacles.py
+------------------------------
+Karel will jump over the obstacles and put beepers in the pink squares.
+"""
+
+def main():
+    # Karel starts facing East in the bottom left corner of the world and ends facing East in the bottom right corner of the world.
+    move()
+    jump_obstacle()
+    put_beeper()
+    jump_obstacle()
+    put_beeper()
+    jump_obstacle()
+    put_beeper()
+    move()
+    move()
+
+def jump_obstacle():
+    # Karel starts facing East, facing a wall.
+    # Karel ends facing East, on the other side of the wall.
+    turn_left() # Face north
+    move() # Go up one row
+    turn_right() # Face east
+    move() # Move forward one column
+    turn_right() # Face south
+    move() # Move back to bottom row
+    turn_left() # Face east
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+if __name__ == "__main__":
+    run_karel_program('Obstacles.w')

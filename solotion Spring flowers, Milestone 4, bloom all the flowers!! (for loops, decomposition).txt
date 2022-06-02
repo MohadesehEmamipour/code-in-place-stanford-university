@@ -1,0 +1,56 @@
+from karel.stanfordkarel import *
+
+"""
+File: SpringFlowers.py
+------------------------------
+Karel starts in the bottom left corner of a world with 2 empty flower stems, facing East.
+Karel should bloom both flowers with beepers and end in the bottom right corner of the world facing East.
+"""
+
+def main():
+    # Karel makes springtime happen by blooming both flower stems in the world!
+    for i in range(2):
+        move_to_wall()
+        bloom_flower()
+    move_to_wall() #fencepost!
+
+def bloom_flower():
+    # Karel places a bloom on top of the stem she is facing.
+    climb_stem()
+    make_bloom()
+    move_to_wall()
+    turn_left()
+
+def climb_stem():
+    # Karel starts facing East at the base of the stem.
+    # Karel climbs the stem until the top, at the bottom left corner of where the bloom will go.
+    # Karel ends facing North.
+    turn_left()
+    while right_is_blocked():
+        move()
+
+def make_bloom():
+    # Karel makes the flower bloom with beepers!
+    # Karel starts facing North at the bottom left corner of the bloom and ends facing South at the bottom right corner of the bloom.
+    put_beeper()
+    move()
+    for i in range(2):
+        put_beeper()
+        turn_right()
+        move()
+    put_beeper()
+
+def move_to_wall():
+    # Karel moves until blocked.
+    while front_is_clear():
+        move()
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+if __name__ == "__main__":
+    run_karel_program('SpringFlowers1.w')
+
+#Spring flowers, Milestone 4: bloom all the flowers!! (for loops, decomposition)
