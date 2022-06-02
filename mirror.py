@@ -34,10 +34,10 @@ def main():
     You should store the return value (image) and then
     call .show() to visualize the output of your program.
     """
-    original = SimpleImage('burrito.jpg')
+    original = SimpleImage('leaves.jpg')
     original.show()
 
-    mirrored = mirror_image('burrito.jpg')
+    mirrored = mirror_image('leaves.jpg')
     mirrored.show()
 
 if __name__ == '__main__':
