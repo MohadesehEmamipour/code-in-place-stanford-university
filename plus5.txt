@@ -1,0 +1,12 @@
+
+def main():
+    x = 1
+    x=plus_five(x)
+    print('x = ',x)
+
+def plus_five(x):
+    x += 5
+    return x
+
+if __name__ == '__main__':
+    main()
