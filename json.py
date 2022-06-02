@@ -1,7 +1,10 @@
 import json
+def get():
+    with open ('D:\\data.json') as f:
+        data=json.load(f)
+        name=name['person']
+        print('name is '+str(name))
 def main():
-    my_file=open('results.json','w')
-    data=json.load(my_file)
-    print(data)
-    if __name__=='__main__':
-        main()
+    get()
+if __name__=='__main__':
+    main()
